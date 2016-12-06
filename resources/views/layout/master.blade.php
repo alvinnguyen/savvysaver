@@ -43,7 +43,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/transactions">Transactions</a></li>
-                <li><a href="/category">Categories</a></li>
+                <li><a href="/categories">Categories</a></li>
                 <li><a href="#">Meta</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meta <span class="caret"></span></a>
