@@ -14,10 +14,10 @@
         <tbody>
         @foreach ($transactions as $transaction)
             <tr>
-                <td>{{ $transaction->name }}</td>
+                <td>{{ $transaction->id }}</td>
                 <td>{{ $transaction->type }}</td>
                 <td>{{ $transaction->description }}</td>
-                <td></td>
+                <td>{{ $transaction->date }}</td>
             </tr>
         @endforeach
         </tbody>

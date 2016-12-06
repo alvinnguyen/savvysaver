@@ -17,14 +17,20 @@ class TransactionController extends Controller
     }
 
     public function store(Request $request) {
-        if (!$request->hasFile('transactions')) {
-            return redirect('/transactions');
+        if ($request->hasFile('transactions')) {
+            $file = $request->file('transactions');
+            $handle = fopen($file->path(), "r");
+            while ($csvLine = fgetcsv($handle, 1000, ",")) {
+                \App\Transaction::create([
+                    'amount' => floatval($csvLine[0]),
+                    'user_id' => 1,
+                    'category_id' => random_int(1, 3),
+                    'description' => $csvLine[1],
+                    'date' => $csvLine[2],
+                    'type' => 'Test'
+                ]);
+            }
         }
-        $file = $request->file('transactions');
-        $handle = fopen($file->path(), "r");
-
-        while ($csvLine = fgetcsv($handle, 1000, ",")) {
-            var_dump($csvLine);
-        }
+        return redirect('/transactions');
     }
 }

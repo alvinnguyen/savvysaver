@@ -21,6 +21,7 @@ class CreateTransactionsTable extends Migration
             $table->float('amount');
             $table->string('type');
             $table->integer('category_id')->unsigned();
+            $table->dateTime('date');
             $table->text('description');
             $table->timestamps();
 
