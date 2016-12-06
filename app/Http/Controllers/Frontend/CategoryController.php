@@ -9,11 +9,12 @@ class CategoryController extends Controller
 {
     public function index() {
         $categories = \App\Category::all();
-        return view('frontend.category.index')->with(compact('categories'));
+        return view('frontend.categories.index')->with(compact('categories'));
     }
 
     public function create() {
-        return view('frontend.category.create');
+        $category = null;
+        return view('frontend.categories.form')->with(compact('category'));
     }
 
     public function store(Request $request) {
@@ -23,7 +24,7 @@ class CategoryController extends Controller
 
     public function edit(Request $request, $id) {
         $category = \App\Category::find($id);
-        return view('frontend.category.create')->with(compact('category'));
+        return view('frontend.categories.form')->with(compact('category'));
     }
 
     public function update(Request $request, $id) {

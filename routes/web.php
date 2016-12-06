@@ -16,7 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('categories', 'Frontend\CategoryController');
-
-//Route::get('/category', 'Frontend\CategoryController@getIndex');
-//Route::get('/category/create', 'Frontend\CategoryController@getCreate');
-//Route::post('/category/create', 'Frontend\CategoryController@postCreate');
+Route::resource('transactions', 'Frontend\TransactionController');
